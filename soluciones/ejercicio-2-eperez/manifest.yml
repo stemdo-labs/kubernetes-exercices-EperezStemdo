@@ -7,5 +7,5 @@ metadata: #caracteristicas para el pod
     version: v1
 spec: #especificacion de los contenedores que pueden tener (en este caso tiene uno)
   containers:
-   - name: apache   
-     image: apache
+   - name: httpd   
+     image: httpd
