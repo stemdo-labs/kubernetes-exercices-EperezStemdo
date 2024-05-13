@@ -1,0 +1,11 @@
+apiVersion: v1 #version 
+kind: Pod #tipo de componente que se quiere crear
+metadata: #caracteristicas para el pod
+  name: nginx
+  labels:
+    zone: prod
+    version: v1
+spec: #especificacion de los contenedores que pueden tener (en este caso tiene uno)
+  containers:
+   - name: nginx   
+     image: apasoft/nginx:v1
