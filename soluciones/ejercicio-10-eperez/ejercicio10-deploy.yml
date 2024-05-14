@@ -1,0 +1,23 @@
+#############
+# DEPLOYMENT  
+#############
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: colors
+spec:
+  selector:   
+    matchLabels:
+      app: color
+  replicas: 3
+  template:  
+    metadata:
+      labels:
+        app: color
+    spec:
+      containers:
+      - name: coloread
+        image: noloknolo/colors:v1
+        ports:
+        - containerPort: 8080
+
