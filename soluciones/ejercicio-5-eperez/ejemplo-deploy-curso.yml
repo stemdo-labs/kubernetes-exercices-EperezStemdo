@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # i se Usa apps/v1beta2 para versiones anteriores a 1.9.0
+kind: Deployment 
+metadata:
+  name: nginx-d 
+spec: #spec del deplyment
+  selector:   #permite seleccionar un conjunto de objetos que cumplan las condiciones
+    matchLabels:
+      app: nginx #localiza etiquetas con la eqtiueta all: nginx. En este caso localiza los contenedores que se van a ejecurar en el deployment
+  replicas: 2 # indica al controlador que ejecute 2 pods
+  template:   # Plantilla que define cómo van a ser los containers
+    metadata:
+      labels:
+        app: nginx #se pone esta etiqueta que es la que se utiliza para luego buscarlos
+    spec: #spec del cotainer (1 en cada pod)
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80 
