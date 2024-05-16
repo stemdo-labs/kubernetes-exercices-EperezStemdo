@@ -1,0 +1,24 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: demogatoyaml
+  namespace: n2 
+  labels:
+    app: gato
+spec:
+  selector:   #permite seleccionar un conjunto de objetos que cumplan las condicione
+    matchLabels:
+      app: gato
+  replicas: 4 
+  strategy:
+     type: RollingUpdate
+  template:   # Plantilla que define los containers
+    metadata:
+      labels:
+        app: gato
+    spec:
+      containers:
+      - name: tomcat
+        image: tomcat:latest
+        ports:
+        - containerPort: 80
