@@ -16,4 +16,4 @@ spec:
       - name: tomcat
         image: tomcat:11.0.0-M20
         ports:
-        - containerPort: 80 
+        - containerPort: 80 #puerto por el que escucha el servidor (la imagen)
