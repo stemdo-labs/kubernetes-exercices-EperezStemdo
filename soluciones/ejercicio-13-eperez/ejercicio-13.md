@@ -36,7 +36,6 @@ kubectl apply -f service.yaml
 Se verifica:
 
 - Que el map se haya creado correctamente
-
 ![](./04-check-cm.png)
 
 - Que el archivo index.html se encuentre dentro del pod
