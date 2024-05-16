@@ -4,11 +4,12 @@ metadata:
   name: html-svc
   labels:
     app: html
-    type: service
 spec:
-  ports:
-  - port: 80
-    #targetPort: 80
+  type: NodePort
   selector:
     app: html
-    type: service
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  

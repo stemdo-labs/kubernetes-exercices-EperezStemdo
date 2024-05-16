@@ -17,7 +17,6 @@ spec:
       containers:
         - name: html
           image: nginx:latest
-          command: [ "/bin/sh", "-c", "sleep 1000000" ]
           volumeMounts:
             - name: volume-html
               mountPath: /usr/share/nginx/html
